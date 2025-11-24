@@ -6,6 +6,13 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
+func main() {
+	router := gin.Default()
+	router.GET("/pizzas", getPizzas)
+
+	router.Run("localhost:8080")
+}
+
 // album represents data about a record album.
 type pizza struct {
 	ID    string  `json:"id"`
@@ -25,13 +32,6 @@ func getPizzas(c *gin.Context) {
 	c.IndentedJSON(http.StatusOK, pizzas)
 }
 
-func main() {
-	router := gin.Default()
-	router.GET("/pizzas", getPizzas)
-
-	router.Run("localhost:8080")
-}
-
 // postAlbums adds an album from JSON received in the request body.
 func postPizzas(c *gin.Context) {
 	var newPizza pizza
@@ -43,6 +43,6 @@ func postPizzas(c *gin.Context) {
 	}
 
 	// Add the new album to the slice.
-	albums = append(albums, newPizza)
+	pizzas = append(pizzas, newPizza)
 	c.IndentedJSON(http.StatusCreated, newPizza)
 }
