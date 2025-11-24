@@ -9,9 +9,9 @@ type pizza struct {
 }
 
 var pizzas = []pizza{
-	{ID: "1", Title: "Blue Train", Type: "John Coltrane", Price: 56.99},
-	{ID: "2", Title: "Jeru", Type: "Gerry Mulligan", Price: 17.99},
-	{ID: "3", Title: "Sarah Vaughan and Clifford Brown", Type: "Sarah Vaughan", Price: 39.99},
+	{ID: "1", Title: "Chocolate", Type: "John Coltrane", Price: 56.99},
+	{ID: "2", Title: "Barbecue", Type: "Gerry Mulligan", Price: 17.99},
+	{ID: "3", Title: "Peperoni", Type: "Sarah Vaughan", Price: 39.99},
 }
 
 func main() {
