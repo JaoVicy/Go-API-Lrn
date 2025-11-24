@@ -31,3 +31,18 @@ func main() {
 
 	router.Run("localhost:8080")
 }
+
+// postAlbums adds an album from JSON received in the request body.
+func postPizzas(c *gin.Context) {
+	var newPizza pizza
+
+	// Call BindJSON to bind the received JSON to
+	// newAlbum.
+	if err := c.BindJSON(&newPizza); err != nil {
+		return
+	}
+
+	// Add the new album to the slice.
+	albums = append(albums, newPizza)
+	c.IndentedJSON(http.StatusCreated, newPizza)
+}
