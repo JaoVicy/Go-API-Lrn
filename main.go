@@ -9,5 +9,8 @@ func main() {
 			"message": "pong",
 		})
 	})
-	router.Run() // escuta em 0.0.0.0:8080 por padrão
+	err := router.Run()
+	if err != nil {
+		return
+	} // escuta em 0.0.0.0:8080 por padrão
 }
