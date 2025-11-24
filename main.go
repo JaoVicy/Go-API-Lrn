@@ -1,16 +1,13 @@
 package main
 
-import "github.com/gin-gonic/gin"
+// album represents data about a record album.
+type album struct {
+	ID     string  `json:"id"`
+	Title  string  `json:"title"`
+	Artist string  `json:"artist"`
+	Price  float64 `json:"price"`
+}
 
 func main() {
-	router := gin.Default()
-	router.GET("/ping", func(c *gin.Context) {
-		c.JSON(200, gin.H{
-			"message": "pong",
-		})
-	})
-	err := router.Run()
-	if err != nil {
-		return
-	} // escuta em 0.0.0.0:8080 por padrão
+
 }
