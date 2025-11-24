@@ -20,7 +20,7 @@ var pizzas = []pizza{
 	{ID: "3", Title: "Peperoni", Size: "45", Price: 39.99},
 }
 
-// getAlbums responds with the list of all albums as JSON.
+// getPizzas responds with the list of all albums as JSON.
 func getPizzas(c *gin.Context) {
 	c.IndentedJSON(http.StatusOK, pizzas)
 }
