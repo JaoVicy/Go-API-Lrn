@@ -27,7 +27,7 @@ func getPizzas(c *gin.Context) {
 
 func main() {
 	router := gin.Default()
-	router.GET("/albums", getPizzas)
+	router.GET("/pizzas", getPizzas)
 
 	router.Run("localhost:8080")
 }
