@@ -14,6 +14,8 @@ func main() {
 
 	router2 := gin.Default()
 	router2.GET("/pizzasApp", postPizzas)
+
+	router2.Run("localhost:8080")
 }
 
 // album represents data about a record album.
