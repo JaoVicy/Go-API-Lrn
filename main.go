@@ -12,7 +12,10 @@ func main() {
 	router.GET("/pizzas", getPizzasByID)
 	router.POST("/pizzas", postPizzas)
 
-	router.Run("localhost:8080")
+	err := router.Run("localhost:8080")
+	if err != nil {
+		panic(err)
+	}
 }
 
 // album represents data about a record album.
