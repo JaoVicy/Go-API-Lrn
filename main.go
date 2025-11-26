@@ -47,3 +47,19 @@ func postPizzas(c *gin.Context) {
 	pizzas = append(pizzas, newPizza)
 	c.IndentedJSON(http.StatusCreated, newPizza)
 }
+
+// getPizzasByID locates the album whose ID value matches the id
+// parameter sent by the client, then returns that album as a response.
+func getPizzasByID(c *gin.Context) {
+	id := c.Param("id")
+
+	// Loop over the list of albums, looking for
+	// an album whose ID value matches the parameter.
+	for _, a := range pizzas {
+		if a.ID == id {
+			c.IndentedJSON(http.StatusOK, a)
+			return
+		}
+	}
+	c.IndentedJSON(http.StatusNotFound, gin.H{"message": "album not found"})
+}
