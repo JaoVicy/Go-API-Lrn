@@ -1,0 +1,9 @@
+"POST" http://localhost:8080/pizzas
+Content-Type: application/json
+
+{
+"id": "4",
+"title": "Moda da Casa",
+"size": "Grande",
+"price": 49.99
+}
