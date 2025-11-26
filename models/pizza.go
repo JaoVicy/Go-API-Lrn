@@ -1,6 +1,6 @@
 package models
 
-type pizza struct {
+type Pizza struct {
 	ID    string  `json:"id"`
 	Title string  `json:"title"`
 	Size  string  `json:"size"`
