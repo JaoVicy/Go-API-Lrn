@@ -9,13 +9,9 @@ import (
 func main() {
 	router := gin.Default()
 	router.GET("/pizzas", getPizzas)
+	router.POST("/pizzas", postPizzas)
 
 	router.Run("localhost:8080")
-
-	router2 := gin.Default()
-	router2.GET("/pizzasApp", postPizzas)
-
-	router2.Run("localhost:8080")
 }
 
 // album represents data about a record album.
