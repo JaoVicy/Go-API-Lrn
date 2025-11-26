@@ -3,6 +3,8 @@ package main
 import (
 	"net/http"
 
+	"api-pizza/models"
+
 	"github.com/gin-gonic/gin"
 )
 
@@ -19,14 +21,8 @@ func main() {
 }
 
 // album represents data about a record album.
-type pizza struct {
-	ID    string  `json:"id"`
-	Title string  `json:"title"`
-	Size  string  `json:"size"`
-	Price float64 `json:"price"`
-}
 
-var pizzas = []pizza{
+var pizzas = []models.Pizza{
 	{ID: "1", Title: "Chocolate", Size: "35", Price: 56.99},
 	{ID: "2", Title: "Barbecue", Size: "30", Price: 17.99},
 	{ID: "3", Title: "Peperoni", Size: "45", Price: 39.99},
@@ -39,7 +35,7 @@ func getPizzas(c *gin.Context) {
 
 // postAlbums adds an album from JSON received in the request body.
 func postPizzas(c *gin.Context) {
-	var newPizza pizza
+	var newPizza models.Pizza
 
 	// Call BindJSON to bind the received JSON to
 	// newAlbum.
