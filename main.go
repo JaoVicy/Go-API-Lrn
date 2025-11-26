@@ -9,6 +9,7 @@ import (
 func main() {
 	router := gin.Default()
 	router.GET("/pizzas", getPizzas)
+	router.GET("/pizzas", getPizzasByID)
 	router.POST("/pizzas", postPizzas)
 
 	router.Run("localhost:8080")
