@@ -1,1 +1,1 @@
-readme
+Repo direcionado para estudos de API em Go
