@@ -11,6 +11,7 @@ import (
 )
 
 func main() {
+	loadPizzas()
 	router := gin.Default()
 	router.GET("/pizzas", getPizzas)
 	router.GET("/pizzas/:id", getPizzasByID)
@@ -73,7 +74,7 @@ func loadPizzas() {
 
 	decoder := json.NewDecoder(file)
 	if err := decoder.Decode(&pizzas); err != nil {
-		panic(err)
+		print("Loading file error:", err)
 	}
 }
 
