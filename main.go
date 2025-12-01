@@ -22,11 +22,7 @@ func main() {
 
 // album represents data about a record album.
 
-var pizzas = []models.Pizza{
-	{ID: "1", Title: "Chocolate", Size: "35", Price: 56.99},
-	{ID: "2", Title: "Barbecue", Size: "30", Price: 17.99},
-	{ID: "3", Title: "Peperoni", Size: "45", Price: 39.99},
-}
+var pizzas []models.Pizza
 
 // getPizzas responds with the list of all albums as JSON.
 func getPizzas(c *gin.Context) {
