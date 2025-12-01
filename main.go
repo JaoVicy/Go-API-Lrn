@@ -74,3 +74,17 @@ func loadPizzas() {
 		panic(err)
 	}
 }
+
+func savePizza() {
+	file, err := os.Create("data/pizza.json")
+	if err != nil {
+		panic(err)
+	}
+	defer file.Close()
+
+	encoder := json.NewEncoder(file)
+	if err := encoder.Encode(pizzas); err != nil {
+		panic(err)
+	}
+
+}
