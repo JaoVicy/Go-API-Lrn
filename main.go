@@ -2,6 +2,7 @@ package main
 
 import (
 	"net/http"
+	"os"
 
 	"api-pizza/models"
 
@@ -58,4 +59,18 @@ func getPizzasByID(c *gin.Context) {
 		}
 	}
 	c.IndentedJSON(http.StatusNotFound, gin.H{"message": "album not found"})
+}
+
+func loadPizzas() {
+	file, err := os.Open("data/pizza.json")
+	if err != nil {
+		panic(err)
+		return
+	}
+	defer file.Close()
+
+	decoder := json.NewDecoder(file)
+	if err := decoder.Decode(&pizzas); err != nil {
+		panic(err)
+	}
 }
