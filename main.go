@@ -1,8 +1,8 @@
 package main
 
 import (
-	"encoding/json"
 	"api-pizza/models"
+	"encoding/json"
 	"net/http"
 	"os"
 
