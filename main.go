@@ -1,10 +1,10 @@
 package main
 
 import (
+	"encoding/json"
+	"api-pizza/models"
 	"net/http"
 	"os"
-
-	"api-pizza/models"
 
 	"github.com/gin-gonic/gin"
 )
