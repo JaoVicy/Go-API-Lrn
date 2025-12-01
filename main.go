@@ -5,6 +5,7 @@ import (
 	"encoding/json"
 	"net/http"
 	"os"
+	"strconv"
 
 	"github.com/gin-gonic/gin"
 )
@@ -39,9 +40,10 @@ func postPizzas(c *gin.Context) {
 	if err := c.BindJSON(&newPizza); err != nil {
 		return
 	}
-
+	newPizza.ID = strconv.Itoa(1 + len(pizzas))
 	// Add the new album to the slice.
 	pizzas = append(pizzas, newPizza)
+	savePizza()
 	c.IndentedJSON(http.StatusCreated, newPizza)
 }
 
